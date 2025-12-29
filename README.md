@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Stack
+- Linguagem: TypeScript.
+- Framework: Next.js.
+- Estilização: Tailwind CSS.
 
-## Getting Started
+# Arquitetura de Pastas
+- src/app/: Rotas do Next.js.
+- src/components/: UI.
+- src/features/: Coração do App
+  - character-sheet/: Lógica da ficha ativa.
+    - components/: (StatsBlock, SkillList, SanityGauge)
+    - hooks/: (useSkillCheck, useSanity)
+    - store.ts: Zustand Store da ficha atual
+  - character-creator/: Wizard de criação passo-a-passo
+  - inventory: Gerenciamento de itens e peso
+  - dice-roller/: Lógica de rolagem simples
+- src/lib/: Utilitários puros
+  - coc-rules.ts: Lógica do jogo (cálculo de 1/2, 1/5, bônus de dano)
+  - db.ts: Configuração do IndexedDB 
+- src/types/: Tipos
 
-First, run the development server:
+# UX/UI: Mobile-first.
+# State Management: Zustand.
+# Persistência de Dados: Dexie.js.
+# Validação de Formulários: React Hook Form + Zod.
+# Infraestrutura Adicional: 
+- PWA: Suporte a Offline Mode e instalação (manifest.json).
+- Segurança de Dados: Funcionalidade de Import/Export (.json) e Versionamento de Banco de Dados (Dexie).
+# QA: Testes unitários (Vitest) para garantir a precisão das regras do RPG (coc-rules.ts).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Objetivo: É um webapp de ficha de personagem totalmente funcional e automatizada para o RPG chamado de cthulhu 7e. Desde a criação do personagem até o gerenciamento da ficha com gerenciamento de items, ou seja, um ficha super completa. Não haverá backend, o projeto é totalmente frontend e pensado prioritariamente para telas mobile. A estilização será com Tailwind CSS com regras customizadas.
+# Escala: É uma aplicação complexa de longo prazo.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
