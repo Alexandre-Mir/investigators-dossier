@@ -14,5 +14,5 @@ export interface IInvestigatorMeta {
   provenance: Provenance;
   ruleset: Ruleset;
   ownerId: string;
-  playerName: string;
+  playerName?: string;
 }
