@@ -12,8 +12,8 @@ export interface IAgingApplication {
 }
 
 export interface IOccupationSnapshot {
-  id: string;
-  name: string;
+  readonly id: string;
+  readonly name: string;
 }
 
 export interface IInvestigatorMeta {
