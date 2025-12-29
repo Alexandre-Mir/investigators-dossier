@@ -13,4 +13,6 @@ export interface IInvestigatorMeta {
   schemaVersion: number;
   provenance: Provenance;
   ruleset: Ruleset;
+  ownerId: string;
+  playerName: string;
 }
