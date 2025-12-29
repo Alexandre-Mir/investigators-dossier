@@ -6,6 +6,11 @@ export enum Provenance {
 
 export type Ruleset = 'classic' | 'pulp'
 
+export interface IAgingApplication {
+  years: number;
+  appliedAt: string;
+}
+
 export interface IInvestigatorMeta {
   readonly id: string;
   readonly createdAt: string;
@@ -15,4 +20,5 @@ export interface IInvestigatorMeta {
   ruleset: Ruleset;
   ownerId: string;
   playerName?: string;
+  agingApplied?: IAgingApplication;
 }
